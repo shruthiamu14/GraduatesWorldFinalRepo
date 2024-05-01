@@ -232,7 +232,7 @@ app.use((err, req, res, next) => {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // });
-mongoose.connect('mongodb+srv://srivikas:<vikas2004>@cluster0.cuihvzg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect('mongodb+srv://srivikas:vikas2004@cluster0.cuihvzg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 
 
