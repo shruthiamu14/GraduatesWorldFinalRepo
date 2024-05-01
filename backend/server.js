@@ -195,8 +195,8 @@ const port = process.env.PORT || 5000;
 app.use(cors(
   {
   
-  origin : ["https://deploy-mern-1whq.vercel.app"],
-  methods : ["POST","GET"],
+  origin : ["https://graduateworld.netlify.app/"],
+  methods : ["POST","GET","DELETE","PUT"],
   credentials: true
   }
   ));
