@@ -33,8 +33,9 @@ function ListOfApplicants() {
 
     return (
         <div className='usersdisplaydiv'>
-            <h2>All Applicants</h2>
-            <table className='applicantsdisplay'>
+            <h2><center>All Applicants</center> </h2>
+            <br />
+            <table className='listofapplicantsdisplay'>
             <thead>
                 <tr>
                     <th>Name</th>

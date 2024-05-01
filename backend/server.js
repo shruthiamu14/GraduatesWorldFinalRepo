@@ -179,7 +179,7 @@ const morgan = require('morgan'); // Logging middleware
 const fs = require('fs');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-
+const jwt = require('jsonwebtoken'); // Import jsonwebtoken library
 
 const axios = require('axios');
 
@@ -189,6 +189,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerOptions=require('./swagger');
 const app = express();
 const PORT = 5000;
+const bcrypt = require('bcrypt');
 
 
 // Application-level middleware
@@ -273,11 +274,18 @@ const transporter = nodemailer.createTransport({
   // Store OTPs and corresponding email addresses
   const otpMap = new Map();
 
+// Add express-session middleware
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: true
+}));
 
-  const generateToken = (user) => {
-    return jwt.sign({ email: user.email }, '5372E653ED6BD22E09BF14DE621CAFBFEA8B1391C056B73F3A0FECB31BD4E1B8', { expiresIn: '1h' });
-  };
-  
+// Function to generate JWT token
+const generateToken = (user) => {
+  return jwt.sign({ email: user.email }, 'your-secret-key', { expiresIn: '1h' });
+};
+
   const verifyToken = (token) => {
     return jwt.verify(token, '5372E653ED6BD22E09BF14DE621CAFBFEA8B1391C056B73F3A0FECB31BD4E1B8');
   };
@@ -391,32 +399,39 @@ let experience=""
 let specialization=""
 
 
+let cachedQuestions = null;
+
 app.get('/api/quiz', async (req, res) => {
-  try {
-      // Check if the database is empty
-      const count = await Quiz.countDocuments({});
-      if (count === 0) {
-          // Define a default set of questions
-          const defaultQuestions = [
-              {
-                  question: "Which language runs in a web browser?",
-                  options: ["Java", "C", "Python", "JavaScript"],
-                  answer: 4
-              },
-              // Add more default questions here...
-          ];
+    try {
+        if (!cachedQuestions) {
+            // Fetch quiz data from the cache
+            cachedQuestions = await Quiz.find({}).lean();
 
-          // Initialize the database with default questions
-          await Quiz.insertMany(defaultQuestions);
-      }
+            if (cachedQuestions.length === 0) {
+                // Initialize the database with default questions
+                const session = await Quiz.startSession();
+                session.startTransaction();
+                try {
+                    // Use bulk insert operation for better performance
+                    await Quiz.insertMany(defaultQuestions);
+                    await session.commitTransaction();
+                } catch (error) {
+                    await session.abortTransaction();
+                    throw error;
+                } finally {
+                    session.endSession();
+                }
 
-      // Fetch quiz data from the database
-      const quizData = await Quiz.find({});
-      res.json(quizData);
-  } catch (error) {
-      console.error('Error fetching quiz data:', error);
-      res.status(500).json({ error: 'Failed to fetch quiz data' });
-  }
+                // Update the cached questions
+                cachedQuestions = defaultQuestions;
+            }
+        }
+
+        res.json(cachedQuestions);
+    } catch (error) {
+        console.error('Error fetching quiz data:', error);
+        res.status(500).json({ error: 'Failed to fetch quiz data' });
+    }
 });
 
 app.post('/api/addQuestion', async (req, res) => {
@@ -436,7 +451,6 @@ app.post('/api/addQuestion', async (req, res) => {
     getBusinessLocations(req, res);
   });
   
-  // Define route to add a business location
   app.post('/api/businesslocations', (req, res) => {
     console.log('adding')
     addBusinessLocation(req, res);
@@ -475,14 +489,13 @@ const addBusinessLocation = async (req, res) => {
 
     // Save the new location document to the database
     await newLocation.save();
-
+    console.log('hello')
     res.status(201).json({ message: "Location added successfully", location: newLocation });
   } catch (error) {
     console.error("Error adding location:", error);
     res.status(500).json({ message: error.message });
   }
 };
-
 
 // Function to delete a business location from MongoDB
 const deleteBusinessLocation = async (req, res) => {
@@ -581,7 +594,7 @@ app.post('/api/addjobs', async (req, res) => {
 
 app.get('/api/availablejobs',async(req,res)=>{
   try{
-    const availablejobs=await Job.find();
+    const availablejobs=await Job.find().lean();
     res.json(availablejobs);
    }catch (err) {
     res.status(500).json({ error: err.message });
@@ -609,7 +622,7 @@ app.delete('/api/job/:id', async (req, res) => {
 
   try {
     // Find the job by ID and delete it
-    const deletedJob = await Job.findByIdAndDelete(jobId);
+    const deletedJob = await Job.findByIdAndDelete(jobId).lean();
     
     if (!deletedJob) {
       return res.status(404).json({ error: 'Job not found' });
@@ -790,21 +803,30 @@ app.post('/api/pass_update',async (req,res,next)=>{
 
 var temp;
 
-app.post('/api/login', async (req, res) => {
+app.post('/api/login', async (req, res,next) => {
+  
   try {
+    console.log('Username:', req.session.userName);
     const { email, password } = req.body;
-    const user = await UserModel.findOne({ email });
+    const user = await UserModel.findOne({ email});
 
     if (!user || user.password !== password) {
+      console.log('hello');
       return res.status(401).json({ error: 'Invalid email or password' });
     }
 
-    const token = generateToken(user);
-    req.session.token = token;
-    req.session.userName = user.username; // Set the username in the session
-    temp = user.username;
+    // const token = generateToken(user);
+    // req.session.token = token;
+    // req.session.userName = user.username; 
+    // temp = user.username;
     // console.log('Username set in session:', req.session); // Add this line to debug
 
+
+    // res.cookie('token', token, { httpOnly: true });
+    const token = generateToken(user);
+    req.session.token = token;
+    req.session.userName = user.username; 
+    console.log('Username set in session:', req.session); // Debugging session
 
     res.cookie('token', token, { httpOnly: true });
     res.status(200).json({ message: 'Login successful', token });

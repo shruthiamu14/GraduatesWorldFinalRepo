@@ -33,7 +33,7 @@ function TestResults() {
             ) : error ? (
                 <p>Error: {error}</p>
             ) : (
-                <table className='applicantsdisplay'>
+                <table className='applicantsresultsdisplay'>
                     <thead>
                         <tr>
                             <th>User</th>
