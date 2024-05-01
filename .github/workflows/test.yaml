@@ -10,17 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
       - name: Install dependencies
         run: |
-          cd Server
+          cd backend
           npm ci --legacy-peer-deps
       - name: Run tests
         run: |
-          cd Server
+          cd backend
           npm test
     
   build-and-deploy:
