@@ -188,12 +188,7 @@ const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const swaggerOptions=require('./swagger');
 const app = express();
-<<<<<<< HEAD
 const port = process.env.PORT || 5000;
-=======
-const PORT = 5000;
-const bcrypt = require('bcrypt');
->>>>>>> d771f3c8d6b570919654d5b0ff806f73208a292a
 
 
 // Application-level middleware

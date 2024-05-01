@@ -395,32 +395,47 @@ height: 100vh;
   justify-content: space-around;
 }
 
-/* mjjob */
-.mjjob {
-  width: 100%; /* Adjust width as needed */
-  background-color: #f5f5f5;
+/* My jobs begin*/
+.mjadmin-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: -10%;
+}
+
+.mjjob-list {
+  max-width: 600px;
+  width: 100%;
   padding: 20px;
-  margin-bottom: 20px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.mjh {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-left: 30%;
+}
+
+.mjjob {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-left: 30%;
 }
 
 .mjjob p {
-  margin: 0;
+  margin: 5px 0;
+}
+
+.mjjob p:first-child {
+  font-weight: bold;
+}
+
+.mjjob p:last-child {
   margin-bottom: 10px;
-}
-
-.mjjob button {
-  background-color: #ff6347;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.mjjob button:hover {
-  background-color: #ff473d;
 }
 
 .mjjob a {
@@ -428,8 +443,16 @@ height: 100vh;
   text-decoration: none;
 }
 
-.mjjob a:hover {
-  text-decoration: underline;
+.mjjob button {
+  background-color: #2f9d8a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-/*  my job end */
+.mjjob button:hover {
+  background-color: #2f9d8a;
+}
