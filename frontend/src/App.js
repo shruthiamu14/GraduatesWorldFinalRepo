@@ -38,7 +38,7 @@ function App() {
     <div>
  <Router>
       <Routes>
-        {/* Conditionally render Navbar for routes other than /register */}
+        
         <Route
           path="/*"
           element={

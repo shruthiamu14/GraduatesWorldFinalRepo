@@ -90,54 +90,73 @@ const EditQuiz = () => {
     };
 
     return (
-        <div>
-            <h2>Edit Quiz</h2>
-            <h3>Add New Question</h3>
-            <input type="text" value={newQuestion} onChange={handleNewQuestionChange} />
-            <br />
+        <div className='eqdiv'>
+    <h2 className='eqh2'>Edit Quiz</h2>
+    <h3 className='eqh3'>Add New Question</h3>
+    <label>
+        Question:
+        <input type="text" value={newQuestion} onChange={handleNewQuestionChange} className='eqinput' />
+    </label>
+    <br />
+    {newOptions.map((option, index) => (
+        <label key={index}>
+            Option {index + 1}:
+            <input
+                type="text"
+                value={option}
+                onChange={(e) => handleNewOptionChange(index, e)}
+                className='eqinput'
+            />
+        </label>
+    ))}
+    <br />
+    <label>
+        Correct Answer:
+        <select value={newAnswer} onChange={handleNewAnswerChange} className='eqselect'>
             {newOptions.map((option, index) => (
+                <option key={index} value={index + 1} className='eqoption'>{option}</option>
+            ))}
+        </select>
+    </label>
+    <br />
+    <button onClick={addNewQuestion} className='eqbutton'>Add Question</button>
+    {quiz.map((item, index) => (
+        <div key={index} className='eqdiva'>
+            <label>
+                Question:
                 <input
-                    key={index}
+                    className='eqchecka'
                     type="text"
-                    value={option}
-                    onChange={(e) => handleNewOptionChange(index, e)}
+                    value={item.question}
+                    onChange={(e) => handleQuestionChange(index, e.target.value)}
                 />
-            ))}
+            </label>
             <br />
-            <select value={newAnswer} onChange={handleNewAnswerChange}>
-                {newOptions.map((option, index) => (
-                    <option key={index} value={index + 1}>{option}</option>
-                ))}
-            </select>
-            <br />
-            <button onClick={addNewQuestion}>Add Question</button>
-            {quiz.map((item, index) => (
-                <div key={index}>
+            {item.options.map((option, optionIndex) => (
+                <label key={optionIndex}>
+                    Option {optionIndex + 1}:
                     <input
+                        className='eqcheckb'
                         type="text"
-                        value={item.question}
-                        onChange={(e) => handleQuestionChange(index, e.target.value)}
+                        value={option}
+                        onChange={(e) => handleOptionChange(index, optionIndex, e.target.value)}
                     />
-                    <br />
-                    {item.options.map((option, optionIndex) => (
-                        <input
-                            key={optionIndex}
-                            type="text"
-                            value={option}
-                            onChange={(e) => handleOptionChange(index, optionIndex, e.target.value)}
-                        />
-                    ))}
-                    <br />
-                    <select value={item.answer} onChange={(e) => handleAnswerChange(index, e.target.value)}>
-                        {item.options.map((option, optionIndex) => (
-                            <option key={optionIndex} value={optionIndex + 1}>{option}</option>
-                        ))}
-                    </select>
-                    <hr />
-                </div>
+                </label>
             ))}
-            
+            <br />
+            <label>
+                Correct Answer:
+                <select value={item.answer} onChange={(e) => handleAnswerChange(index, e.target.value)} className='eqselectx'>
+                    {item.options.map((option, optionIndex) => (
+                        <option key={optionIndex} value={optionIndex + 1} className='eqoptionf'>{option}</option>
+                    ))}
+                </select>
+            </label>
+            <hr />
         </div>
+    ))}
+</div>
+
     );
 };
 

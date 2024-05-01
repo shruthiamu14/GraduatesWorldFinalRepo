@@ -21,10 +21,10 @@
   cursor: pointer;
 }
 
-.grid-container {
+.expertgrid-container {
   margin: 0;
   padding: 0;
-  background-color: rgb(197, 224, 222);
+  background-color: rgb(183, 198, 197);
   color: #151515;
   font-family: 'Montserrat', sans-serif;
   display: grid;
@@ -33,7 +33,7 @@
   grid-template-areas:
     'sidebar header header header'
     'sidebar main main main';
-  height: 100vh;
+  height: 150vh;
 }
 
 /* Header  */
@@ -105,7 +105,8 @@
 
 .sidebar-list-item:hover {
 
-  background: rgb(232, 75, 135);
+  background: #333;
+  color: #57c1cf;
   cursor: pointer;
 }
 
@@ -126,7 +127,7 @@
   overflow-y: auto;
   padding: 20px 20px;
   color: rgba(40, 39, 39, 0.95);
-  background-color: rgb(197, 224, 222);
+  background-color: rgb(183, 198, 197);
 }
 
 .main-title {
@@ -249,47 +250,47 @@
 
 .usersdisplaydiv{
   margin-top: 10%;
-  margin-left: 30%;
+  /* margin-left: 30%; */
  
 }
 
 .resultsdisplaydiv{
   margin-top: 20%;
-  margin-left: 10%;
+  /* margin-left: 10%; */
 }
-.applicantsdisplay {
+.listofapplicantsdisplay,.applicantsresultsdisplay {
   width: 100%;
   border-collapse: collapse;
-  margin: 25px 0;
+  /* margin: 20px 0; */
   font-size: 1.1em;
   font-family: sans-serif;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left: 10%;
 }
 
 
 
-.applicantsdisplay thead tr {
+.listofapplicantsdisplay thead tr,.applicantsresultsdisplay thead tr {
   background-color: rgb(120, 181, 176);
   color: #0c0c0c;
   text-align: left;
   font-weight: bold;
 }
-
-.applicantsdisplay th,
-.applicantsdisplay td {
-  padding: 12px 30px;
+.listofapplicantsdisplay th,.applicantsresultsdisplay th,
+.listofapplicantsdisplay th,.applicantsresultsdisplay td {
+  padding: 15px 30px;
   text-align: left;
 }
 
-.applicantsdisplay tbody tr {
+.listofapplicantsdisplay tbody tr,.applicantsresultsdisplay tbody tr {
   border-bottom: 1px solid #dddddd;
 }
 
-.applicantsdisplay tbody tr:nth-of-type(even) {
+.listofapplicantsdisplay tbody tr:nth-of-type(even),.applicantsresultsdisplay tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
 
-.applicantsdisplay tbody tr:last-of-type {
+.listapplicantsdisplay tbody tr:last-of-type,.applicantsresultsdisplay tbody tr:last-of-type {
   border-bottom: 2px solid rgb(120, 181, 176);
 }
 
@@ -356,3 +357,86 @@
   border-radius: 20px;
   font-size: 1.1em;
 }
+
+
+/* edit questions Start */
+.eqdiv {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-left: 100%;
+  margin-right: -100%;
+}
+
+.eqh2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.eqh3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.eqinput,
+.eqselect {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.eqoption {
+  font-size: 16px;
+}
+
+.eqbutton {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.eqbutton:hover {
+  background-color: #0056b3;
+}
+
+.eqdiva {
+  margin-top: 20px;
+}
+
+.eqchecka,
+.eqcheckb {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.eqselectx {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.eqoptionf {
+  font-size: 16px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+
+/* edit question end */

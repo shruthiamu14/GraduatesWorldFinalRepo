@@ -60,9 +60,9 @@ function ExpertLeftNav({ onSidebarClick }) {
         {/* <li className='sidebar-list-item' onClick={() => onSidebarClick('createTest')}>
           <BsFillArchiveFill className='icon' /> Create a Test
         </li> */}
-        <li className='sidebar-list-item' onClick={() => onSidebarClick('searchUser')}>
+        {/* <li className='sidebar-list-item' onClick={() => onSidebarClick('searchUser')}>
           <RiUserSearchFill className='icon' /> Search For user
-        </li>
+        </li> */}
         <li className='sidebar-list-item' onClick={() => onSidebarClick('userresults')}>
           <BsBarChartLineFill className='icon' /> Results 
         </li>

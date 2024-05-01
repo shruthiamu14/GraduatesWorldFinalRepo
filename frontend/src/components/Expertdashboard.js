@@ -82,8 +82,8 @@ function Expertdashboard() {
     switch (currentView) {
       case 'dashboard':
         return <Applicants />;
-      case 'searchUser':
-        return <SearchUserByExpert />;
+      // case 'searchUser':
+      //   return <SearchUserByExpert />;
       case 'users':
         return <ListOfApplicants />;
       case 'userresults':
@@ -96,11 +96,11 @@ function Expertdashboard() {
   };
 
   return (
-    <div className='grid-container'>
+    <div className='expertgrid-container'>
      
       <ExpertLeftNav onSidebarClick={handleSidebarClick} />
       <ExpertNav />
-      <div className='middle-content'>
+      <div className='expertmiddle-content'>
         {renderView()}
       </div>
     </div>

@@ -40,8 +40,9 @@ const UserLogin = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-      
+        
         try {
+          console.log("hii");
           const response = await fetch('http://localhost:5000/api/login', {
             method: 'POST',
             headers: {
@@ -54,7 +55,7 @@ const UserLogin = () => {
             console.log('Login successful');
             navigate("/userdashboard");
             
-            // Optionally, redirect the user or perform other actions upon successful login
+           
           } else {
             const data = await response.json();
             setError(data.error || 'Failed to login');
