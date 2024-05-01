@@ -192,11 +192,14 @@ const port = process.env.PORT || 5000;
 
 
 // Application-level middleware
-app.use(cors({ 
-  origin: 'http://localhost:3000', // Allow requests from this origin
-  credentials: true // Allow sending cookies with the request
-}));
-
+app.use(cors(
+  {
+  
+  origin : ["https://deploy-mern-1whq.vercel.app"],
+  methods : ["POST","GET"],
+  credentials: true
+  }
+  ));
 app.use(express.json()); // Body parsing middleware
 
 app.use(cookieParser());
@@ -224,11 +227,12 @@ app.use((err, req, res, next) => {
 
 
 
-// MongoDB connection setup
-mongoose.connect('mongodb://127.0.0.1:27017/shyam', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// // MongoDB connection setup
+// mongoose.connect('mongodb://127.0.0.1:27017/shyam', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+mongoose.connect('mongodb+srv://srivikas:<vikas2004>@cluster0.cuihvzg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 
 
