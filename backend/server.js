@@ -188,7 +188,7 @@ const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const swaggerOptions=require('./swagger');
 const app = express();
-const PORT = 5000;
+const port = process.env.PORT || 5000;
 
 
 // Application-level middleware
@@ -1190,8 +1190,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Something broke!' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
 
 
