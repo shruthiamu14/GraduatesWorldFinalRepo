@@ -1,0 +1,46 @@
+.registerapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+background-image: url('../imgANDvid/flat-lay-photo-office-desk-with-laptop-copy-space-background.jpg');
+      /* url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    background-size: cover;
+    background-position: center; */
+  }
+  
+  .rgform{
+      background-color: rgb(244, 241, 241);
+      padding: 0px 60px;
+      border-radius: 10px;
+      margin-top: 5%;
+  }
+  
+ .rgformheading{
+      color: rgb(77, 1, 77);
+      text-align: center;
+      padding-bottom: 5%;
+      padding-top: 5%;
+  }
+  
+.rgsubmit{
+      width: 100%;
+      height: 50px;
+      /* padding: 10px; */
+      border: none;
+      background-color: rebeccapurple;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      margin-left: 0;
+  }
+
+  .error-message{
+    color: red;
+  }

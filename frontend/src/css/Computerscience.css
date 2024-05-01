@@ -1,0 +1,160 @@
+
+
+  
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  
+}
+.jobbody{
+  background-image: url('../imgANDvid/589.jpg');
+}
+.sidebar {
+    position: fixed;
+    height: 100%;
+   max-width: 50%;
+    width: 240px;
+    background: rgb(1, 42, 50);
+    transition: all 0.5s ease;
+    float: left;
+}
+
+
+.logo_name {
+
+    margin-top: 50%;
+    margin-bottom: 0%;
+padding-top: 10%;
+    color: rgb(75, 232, 219);
+    font-size: 24px;
+    text-align: center;
+
+
+}
+
+.logo_name hr{
+  margin: 0;
+  color: #081D45;
+  background-color:#081D45;
+}
+
+.nav-links {
+    margin-top: 10%;
+}
+
+ .nav-links li {
+    position: relative;
+    list-style: none;
+    height: 4em;
+}
+
+ .nav-links  Link  li{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+ 
+}
+
+ .nav-links link.active {
+    background: #081D45;
+}
+
+
+.sidebar .nav-links li:hover {
+    background: rgb(52, 67, 66);
+    color: black;
+}
+
+
+ .links_name {
+    color:rgb(39, 225, 225);
+
+    font-weight: 400;
+    font-size: 1em;
+ text-decoration: none;
+ padding-top: 8%;
+
+    
+}
+
+.linktext{
+  text-decoration: none;
+  
+  padding-top: 5%;
+}
+
+.jobcontent{
+  padding-left: 20%;
+  padding-top: 8%;
+}
+
+
+.blog-preview {
+  padding: 10px 16px;
+
+  margin-bottom: 4%;
+  margin-right: 10%;
+  border-radius: 0.1cm;
+  text-decoration: none;
+  background: rgb(217, 235, 241);
+}
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+.blog-preview h2 {
+  padding: 5%;
+  font-size: 20px;
+  color: #e1a7b8;
+  margin-bottom: 8px;
+  text-decoration:none ;
+}
+.jobtitle{
+  padding: 2%;
+  color: rgb(128, 233, 233);
+
+  text-decoration: none;
+
+}
+
+
+
+a{
+  text-decoration: none;
+}
+
+.jobs span{
+  padding: 5%;
+color: #547ac1;
+border-bottom: 5%;
+  margin: 2%;
+  line-height: 5%;
+}
+
+.view-more-btn {
+  background-color: rgb(52, 161, 205);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-top: 10px; /* Adjust the space between the job details and the button */
+  margin-left: 5%;
+}
+
+.view-more-btn:hover {
+  background-color: #4f8dce;
+  cursor: pointer;
+}
+
+.blog-preview h1{
+  color: #2168b4;
+}
+ 

@@ -1,0 +1,80 @@
+/* src/App.css */
+.ctbody {
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('../imgANDvid/top-view-blue-monday-concept-composition-with-telephone.jpg');
+    background-position-x: center;
+    background-position-y: top;
+    background-blend-mode: darken;
+    /* background-size: cover; */
+  }
+
+  .contactabout{
+
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .ctname {
+    margin-top: 10%;
+    margin-bottom: 4%;
+    text-align: center;
+    color: #333; /* Change the color to your preference */
+    /* Add any other styles you want for the h1 element */
+  }
+  
+  .ctapp-container {
+    display: flex;
+  }
+  
+  .ctabout-container,
+  .contact-container {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .ctabout-container {
+    background-color: #f0f0f0;
+  }
+  .cthead2{
+    padding: 3%;
+  }
+  
+  .contact-container {
+    padding: 5%;
+    background-color: #e0e0e0;
+  }
+  
+  .ctform {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ctlabel {
+    margin-top: 5%;
+    margin-bottom: 8px;
+  }
+  
+  .ctinput,
+.cttextarea {
+    margin-bottom: 16px;
+    padding: 8px;
+  }
+  
+  .ctbutton {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .ctbutton:hover {
+    background-color: #0056b3;
+  }

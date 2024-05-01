@@ -1,0 +1,435 @@
+/* App.css */
+.fullapp {
+  background: white;
+  background-color: white;
+}
+
+.dbapp-container {
+  display: flex;
+  width: 100%;
+  /* Remove height: 100vh; */
+}
+
+.left-nav-bar {
+  background-color: #2f9d8a;
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  width: 20%;
+  position: sticky;
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 1; /* Ensure it stays above other content */
+  height: 200vh;
+}
+/* Remaining CSS styles remain the same */
+
+  .adbheading{
+    margin: 0;
+    padding: 0;
+  }
+  .adbchange{
+    width: 100%;
+    height: fit-content;
+    /* background: w; */
+  }
+  .adblogo{
+    width: 50%;
+    position: relative;
+    left: 20%;
+  }
+  .adbul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /* width: fit-content; */
+    
+  }
+  
+  
+  .adbli {
+    padding: 15px 0;
+    font-size: 20px;
+    color: white;
+    display: block;
+    width: 100%;
+  }
+  
+  .left-nav-bar li:hover {
+    background-color: #081D45;
+    width: 100%;
+  }
+  
+
+  
+  .top-sec{
+    display: flex;
+  }
+  .top-nav-bar {
+    background-color: #39bda7;
+    color: white;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
+  }
+  
+  .tpnavinput {
+    padding: 20px;
+    height: 30px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 8px;
+  }
+  
+ 
+  .adbsearch{
+    padding: 8px 16px;
+    background-color: #2ecc71;
+    color: white;
+    /* margin-right: 700px; */
+    /* margin-right: 50%; */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .adbsearch:hover {
+    background-color: #27ae60;
+  }
+
+  .profile-name{
+    color: #040404;
+  }
+  .logout-btn{
+    color: #040404;
+  }
+  .logout-btn:hover{
+    color: #c61111;
+  }
+  .profile-name-actual{
+    color: #040404;
+  }
+  .adbprofilesection{
+    margin-left: 40%;
+  }
+  
+  .adbbox-topic{
+    padding-top: 2%;
+  }
+  
+  .top-nav-bar {
+    background-color: whitesmoke;
+    color: black;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 50px;
+    text-align: center;
+  }
+  
+
+  .main-content {
+    padding: 20px;
+
+  }
+  
+  .dbcontent-container {
+    flex-grow: 1;
+    background-color: aliceblue;
+    width: 100%;
+    height: 100vh;
+  }
+  
+
+ 
+ 
+   .adtitle {
+    font-size: large;
+    font-weight: bolder;
+    margin-top: 20px;
+ 
+  }
+  .maincontentdb {
+    padding: 20px;
+    width: 100%;
+height: 100vh;
+  
+  }
+  
+  .tpnavoverview-boxes {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .tpnavbox {
+    background-color: #34bcc6;
+    color:black;
+    padding: 5px;
+    border-radius: 10px;
+    width: 95%;
+    text-align: center;
+  }
+  
+  .mainadmin-boxes,
+  .mainadmin-boxes-2 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    
+  }
+
+  .adminimg{
+    width: 35%;
+  }
+
+  .mainadminli{
+    list-style-type: none;
+    padding: 2%;
+  }
+  
+  .admin-left,
+  .admin-right,
+  .admin-left-2,
+  .admin-right-2 {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }
+
+  .admin-left-2,
+  .admin-right-2 {
+    background-color: #f1f6f3;
+    color: black;
+    font-weight: 600;
+  }
+  
+
+  
+
+  .removeusercontainer,.removeexpertcontainer,.searchexpertcontainer,.selectexpertcontainer {
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  }
+  
+  .removeuserform,
+  .removeexpertform,
+  .searchexpertform,
+  .selectexpertform{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .removeuserlabel,
+  .removeexpertlabel,
+  .searchexpertlabel,
+  .selectexpertlabel{
+    margin-bottom: 10px;
+    padding: 5%;
+  }
+  
+  .removeuserinput,
+  .removeexpertinput,
+  .searchexpertinput,
+  .selectexpertinput {
+    padding: 5%;
+    margin-top: 3%;
+    margin-bottom: 15px;
+  }
+  
+  .removeuserbtn,.removeexpertbtn,.searchexpertbtn,.selectexpertbtn {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+  }
+  
+  .removeuserbtn:hover,.removeexpertbtn:hover,.searchexpertbtn:hover, .selectexpertbtn:hover{
+    background-color: #27ae60;
+  }
+  
+  
+  .addjobform {
+    background: white; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 40%;
+    margin-left: 400px;
+
+  }
+  
+  .addjobformheading{
+    font-size: 24px;
+    color: #040404;
+    margin-bottom: 20px;
+  }
+  
+ 
+  
+  .addjobformlabel {
+    font-size: 16px;
+    color: #0c0000;
+    margin-bottom: 8px;
+    font-weight: 900;
+    
+  }
+  
+  .addjobforminput,
+  .addjobformtextarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+  
+  .addjobformbtn {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .addjobformbtn:hover {
+    background-color: #27ae60;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Add a Start */
+  .job_post.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .ajfcontainer {
+    width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  addjobformbtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  addjobformbtn:hover {
+    background-color: #0056b3;
+  }
+  /* Add a end */
+
+
+  /* My jobs begin*/
+
+  /* mjadmin-dashboard */
+.mjadmin-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.mjh{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* mjjob-list */
+.mjjob-list {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* mjjob */
+.mjjob {
+  width: 100%; /* Adjust width as needed */
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mjjob p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.mjjob button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mjjob button:hover {
+  background-color: #ff473d;
+}
+
+.mjjob a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.mjjob a:hover {
+  text-decoration: underline;
+}
+
+/*  my job end */

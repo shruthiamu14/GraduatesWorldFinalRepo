@@ -1,0 +1,32 @@
+.Forgetbody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+background-image: url('../imgANDvid/flat-lay-photo-office-desk-with-laptop-copy-space-background.jpg');
+}
+
+
+.Forgetinput{
+    padding: 5%;
+    border-radius: 3px;
+}
+.Forgetbutton{
+    width: 50%;
+    height: 10px;
+     padding-left: 0px; 
+     padding-top: 15px;
+     padding-bottom: 20px;
+    border: none;
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+}
