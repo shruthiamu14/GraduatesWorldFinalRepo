@@ -8,7 +8,7 @@ const AdminNavBar = () => {
     // Fetch admin name from the server
     const fetchAdminName = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/adminName', {
+        const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/adminName', {
           method: 'GET',
           credentials: 'include',
         });
@@ -29,7 +29,7 @@ const AdminNavBar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/adminLogout', {
+      const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/adminLogout', {
         method: 'POST',
         credentials: 'include',
       });
