@@ -19,7 +19,7 @@ function LocationApp() {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/businesslocations')
+    fetch('https://graduatesworldfinalrepo.onrender.com/api/businesslocations')
     .then(response => response.json())
     .then(data => {
       setLocations(data.map(location => ({ ...location, added: false })));
@@ -58,7 +58,7 @@ function LocationApp() {
             setLocations(prev => [...prev, newLocation]);
 
             // Send the new location to the backend
-            fetch('http://localhost:5000/api/businesslocations', {
+            fetch('https://graduatesworldfinalrepo.onrender.com/api/businesslocations', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -89,7 +89,7 @@ function LocationApp() {
 };
 
   const handleRemoveLocation = (locationId) => {
-    fetch(`http://localhost:5000/api/businesslocations/${locationId}`, {
+    fetch(`https://graduatesworldfinalrepo.onrender.com/api/businesslocations/${locationId}`, {
       method: 'DELETE'
     })
     .then(response => {
