@@ -55,7 +55,7 @@ const ExpertNav = () => {
     const fetchExpertName = async () => {
       try {
         // Make API call to fetch expert name
-        const response = await fetch('http://localhost:5000/api/expertName', {
+        const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/expertName', {
           method: 'GET',
           credentials: 'include',
         });
@@ -77,7 +77,7 @@ const ExpertNav = () => {
   const handleLogout = async () => {
     try {
       // Make API call to logout
-      await fetch('http://localhost:5000/api/expertLogout', {
+      await fetch('https://graduatesworldfinalrepo.onrender.com/api/expertLogout', {
         method: 'POST',
         credentials: 'include',
       });
