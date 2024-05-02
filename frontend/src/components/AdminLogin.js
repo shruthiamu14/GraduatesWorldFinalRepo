@@ -42,7 +42,7 @@ const AdminLogin = () => {
         e.preventDefault();
       
         try {
-          const response = await fetch('http://localhost:5000/api/adminlogin', {
+          const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/adminlogin', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
