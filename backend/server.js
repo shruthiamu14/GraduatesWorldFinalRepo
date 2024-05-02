@@ -563,6 +563,43 @@ app.get('/api/checkUserTest/:enteredUsername', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
 }
 });
+
+// app.post('/api/addjobs', async (req, res) => {
+//   try {
+//     // Extract job details from the request body
+//     const { title, description, category, country, city, location, salaryFrom, salaryTo, fixedSalary } = req.body;
+
+//     // Validate input data
+//     if (!title || !description || !category || !country || !city || !location || salaryFrom === undefined || salaryTo === undefined || fixedSalary === undefined) {
+//       return res.status(400).json({ error: 'Missing required fields' });
+//     }
+
+//     // Create a new job document using the JobModel schema
+//     const newJob = new Job({
+//       title,
+//       description,
+//       category,
+//       country,
+//       city,
+//       location,
+//       salaryFrom,
+//       salaryTo,
+//       fixedSalary
+//     });
+
+//     // Save the new job document to the database
+//     await newJob.save();
+
+//     // Send a success response
+//     res.status(201).json({ message: 'Job added successfully', job: newJob });
+//   } catch (error) {
+//     // Handle any errors that occur during job creation
+//     console.error('Error adding job:', error);
+//     res.status(500).json({ error: 'Failed to add job' });
+//   }
+// });
+
+// After Optimisation
 // Define a route for adding jobs by admin
 app.post('/api/addjobs', async (req, res) => {
   try {
