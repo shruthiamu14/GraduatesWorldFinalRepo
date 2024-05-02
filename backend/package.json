@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "mocha --timeout 10000 --recursive --reporter mochawesome"
+    "test": "npm test"
   },
   "keywords": [],
   "author": "",
