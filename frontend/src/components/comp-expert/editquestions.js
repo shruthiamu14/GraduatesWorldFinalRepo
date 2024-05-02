@@ -13,7 +13,7 @@ const EditQuiz = () => {
 
     const fetchQuizData = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/quiz');
+            const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/quiz');
             if (!response.ok) {
                 throw new Error('Failed to fetch quiz data');
             }
@@ -64,7 +64,7 @@ const EditQuiz = () => {
             answer: parseInt(newAnswer)
         };
         try {
-            const response = await fetch('http://localhost:5000/api/addQuestion', {
+            const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/addQuestion', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
