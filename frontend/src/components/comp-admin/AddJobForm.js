@@ -20,7 +20,7 @@
 //     e.preventDefault();
   
 //     try {
-//       const response = await fetch('http://localhost:5000/api/addjobs', {
+//       const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/addjobs', {
 //         method: 'POST',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ const AddJobForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5000/api/addjobs", {
+    const response = await fetch("https://graduatesworldfinalrepo.onrender.com/api/addjobs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
