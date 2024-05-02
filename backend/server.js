@@ -448,6 +448,63 @@ app.post('/api/addQuestion', async (req, res) => {
   }
 });
 
+// // Define route to add a business location
+// app.post('/api/businesslocations', async (req, res) => {
+//   try {
+//     const { _id, name, lat, lng } = req.body;
+
+//     // Validate input data
+//     if (!_id || !name || !lat || !lng) {
+//       return res.status(400).json({ message: 'Missing required fields' });
+//     }
+
+//     // Create a new business location document
+//     const newLocation = new BusinessLocation({
+//       _id,
+//       name,
+//       lat,
+//       lng
+//     });
+
+//     // Save the new location document to the database
+//     await newLocation.save();
+
+//     res.status(201).json({ message: 'Location added successfully', location: newLocation });
+//   } catch (error) {
+//     console.error('Error adding location:', error);
+//     res.status(500).json({ message: error.message });
+//   }
+// });
+
+// // Define route to delete a business location
+// app.delete('/api/businesslocations/:locationId', async (req, res) => {
+//   try {
+//     const locationId = req.params.locationId;
+
+//     // Find and delete the business location by its ID
+//     await BusinessLocation.findByIdAndDelete(locationId);
+
+//     res.status(200).json({ message: 'Location deleted successfully' });
+//   } catch (error) {
+//     console.error('Error deleting location:', error);
+//     res.status(500).json({ message: error.message });
+//   }
+// });
+
+// // Function to get business locations from MongoDB
+// const getBusinessLocations = async (req, res) => {
+//   try {
+//     // Find all business locations in the database
+//     const locations = await BusinessLocation.find();
+//     res.status(200).json(locations);
+//   } catch (error) {
+//     console.error('Failed to fetch locations:', error);
+//     res.status(500).json({ message: error.message });
+//   }
+// };
+
+
+// After Optimisation
 //Route for adding job locations
   // Define route to get business locations
   app.get('/api/businesslocations', (req, res) => {
