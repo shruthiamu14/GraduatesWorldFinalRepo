@@ -806,6 +806,7 @@ app.post('/api/pass_update',async (req,res,next)=>{
 
 var temp;
 
+// After Database Optimization
 app.post('/api/login', async (req, res,next) => {
   
   try {
@@ -839,7 +840,40 @@ app.post('/api/login', async (req, res,next) => {
   }
 });
 
+// app.post('/api/login', async (req, res) => {
+//   try {
+//     const { email, password } = req.body;
 
+//     // Validate input data
+//     if (!email || !password) {
+//       return res.status(400).json({ error: 'Email and password are required' });
+//     }
+
+//     // Find user by email
+//     const user = await UserModel.findOne({ email });
+
+//     // Check if user exists and password is correct
+//     if (!user || !(await bcrypt.compare(password, user.password))) {
+//       return res.status(401).json({ error: 'Invalid email or password' });
+//     }
+
+//     // Generate JWT token
+//     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+//     // Set token in session (if needed)
+//     // req.session.token = token;
+//     // req.session.userName = user.username;
+
+//     // Set cookie with token
+//     res.cookie('token', token, { httpOnly: true });
+
+//     // Send success response
+//     res.status(200).json({ message: 'Login successful', token });
+//   } catch (error) {
+//     console.error('Error during login:', error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });
 
 // Add this route to your Express server code
 app.get('/api/userName', (req, res) => {
