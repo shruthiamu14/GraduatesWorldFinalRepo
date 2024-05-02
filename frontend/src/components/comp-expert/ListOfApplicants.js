@@ -15,7 +15,7 @@ function ListOfApplicants() {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/applicants');
+            const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/applicants');
             if (!response.ok) {
                 throw new Error('Failed to fetch data');
             }
