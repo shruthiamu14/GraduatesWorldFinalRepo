@@ -10,7 +10,7 @@ const OTPForm = ({ history }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/verify_otp1', {
+      const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/verify_otp1', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
