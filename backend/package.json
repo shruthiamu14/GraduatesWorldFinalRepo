@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "mocha --timeout 10000 --recursive --reporter mochawesome"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +27,7 @@
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.9",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.0"
+    "swagger-ui-express": "^5.0.0",
+    "mocha": "^10.2.0"
   }
 }
