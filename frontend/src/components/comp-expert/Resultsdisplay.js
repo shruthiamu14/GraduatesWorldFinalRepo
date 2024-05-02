@@ -11,7 +11,7 @@ function TestResults() {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/testResults');
+            const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/testResults');
             if (!response.ok) {
                 throw new Error('Failed to fetch data');
             }
