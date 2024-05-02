@@ -9,7 +9,7 @@ const UpdatePass = ({}) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/expertpass_update', {
+      const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/expertpass_update', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
