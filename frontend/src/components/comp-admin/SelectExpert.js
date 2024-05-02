@@ -15,7 +15,7 @@ const SelectExpert = () => {
     
     try {
       console.log(email)
-      const response = await fetch('http://localhost:5000/api/select_expert', {
+      const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/select_expert', {
         method: 'POST',
        headers: {
           'Content-Type': 'application/json',
