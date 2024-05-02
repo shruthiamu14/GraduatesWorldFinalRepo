@@ -11,7 +11,7 @@
 
 //   const fetchData = async () => {
 //     try {
-//       const response = await fetch('http://localhost:5000/api/applicants');
+//       const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/applicants');
 //       if (!response.ok) {
 //         throw new Error('Failed to fetch data');
 //       }
@@ -74,14 +74,14 @@ function Applicants() {
 
   const fetchData = async () => {
     try {
-        const applicantsResponse = await fetch('http://localhost:5000/api/applicants');
+        const applicantsResponse = await fetch('https://graduatesworldfinalrepo.onrender.com/api/applicants');
         if (!applicantsResponse.ok) {
           throw new Error('Failed to fetch applicants data');
         }
         const applicantsData = await applicantsResponse.json();
         setApplicants(applicantsData);
     
-        const testResultsResponse = await fetch('http://localhost:5000/api/testResults');
+        const testResultsResponse = await fetch('https://graduatesworldfinalrepo.onrender.com/api/testResults');
         if (!testResultsResponse.ok) {
           throw new Error('Failed to fetch test results data');
         }
