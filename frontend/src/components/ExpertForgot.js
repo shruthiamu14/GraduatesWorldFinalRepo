@@ -10,7 +10,7 @@ const EmailForm = ({}) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/expert_forgot', {
+      const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/expert_forgot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
