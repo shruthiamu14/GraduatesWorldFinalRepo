@@ -13,7 +13,7 @@ const RemoveUserPage = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch('http://localhost:5000/api/remove_user', {
+      const response = await fetch('https://graduatesworldfinalrepo.onrender.com/api/remove_user', {
         method: 'POST',
        headers: {
           'Content-Type': 'application/json',
