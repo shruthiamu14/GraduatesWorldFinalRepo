@@ -190,16 +190,11 @@ const swaggerOptions=require('./swagger');
 const app = express();
 const port = process.env.PORT || 5000;
 
-
+  // origin : ["https://graduateworld.netlify.app/"],
+  // methods : ["POST","GET","DELETE","PUT"],
+  // credentials: true
 // Application-level middleware
-app.use(cors(
-  {
-  
-  origin : ["https://graduateworld.netlify.app/"],
-  methods : ["POST","GET","DELETE","PUT"],
-  credentials: true
-  }
-  ));
+app.use(cors());
 app.use(express.json()); // Body parsing middleware
 
 app.use(cookieParser());
